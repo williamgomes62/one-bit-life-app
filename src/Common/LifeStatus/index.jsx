@@ -38,11 +38,12 @@ const styles = StyleSheet.create({
   container: {
     width: 300,
     height: 300,
+
   },
   robotAnimation: {
     width: 150,
     marginTop: 30,
-    marginLeft: 25,
+    alignSelf: 'center'
   },
   educationAnimation: {
     width: 100,
