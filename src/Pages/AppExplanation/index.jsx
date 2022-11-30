@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
     textAlign: 'center',
-    marginVertical: 40,
+    marginVertical: 25,
   },
   descriptionCta: {
     color: '#fff',
