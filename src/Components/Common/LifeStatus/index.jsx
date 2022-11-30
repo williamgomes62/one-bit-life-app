@@ -13,19 +13,19 @@ export default function LifeStatus() {
   return (
     <View style={styles.container}>
       <Lottie
-        source={require('../../../src/assets/education/education-1.json')}
+        source={require('../../../../src/assets/education/education-1.json')}
         autoPlay
         loop
         style={styles.educationAnimation}
       />
       <Lottie
-        source={require('../../../src/assets/money/money-100.json')}
+        source={require('../../../../src/assets/money/money-100.json')}
         autoPlay
         loop
         style={styles.financeAnimation}
       />
       <Lottie
-        source={require('../../../src/assets/robot/robot-100-100.json')}
+        source={require('../../../../src/assets/robot/robot-100-100.json')}
         autoPlay
         loop
         style={styles.robotAnimation}

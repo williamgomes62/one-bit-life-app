@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, ScrollView, Image, Text, StyleSheet } from 'react-native';
-import DefaultButton from '../../Common/DefaultButton';
-import LifeStatus from '../../Common/LifeStatus';
+import DefaultButton from '../../Components/Common/DefaultButton';
+import LifeStatus from '../../Components/Common/LifeStatus';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Start() {
