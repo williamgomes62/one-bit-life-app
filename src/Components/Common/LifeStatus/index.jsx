@@ -37,8 +37,7 @@ export default function LifeStatus() {
 const styles = StyleSheet.create({
   container: {
     width: 300,
-    height: 300,
-
+    height: 270,
   },
   robotAnimation: {
     width: 150,
