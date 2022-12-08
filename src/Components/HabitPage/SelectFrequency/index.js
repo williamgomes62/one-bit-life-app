@@ -1,40 +1,37 @@
+import { View, Image, StyleSheet } from 'react-native';
 import { useState, useEffect } from 'react';
-import { Image, StyleSheet } from 'react-native';
 import { SelectList } from 'react-native-dropdown-select-list';
-import HabitsData from '../../../Databases/HabitsData';
 
-export default function SelectHabit({ habit, habitInput }) {
+export default function SelectFrequency({
+  habitFrequency,
+  frequencyInput
+}) {
   const [selected, setSelected] = useState(
-    habit?.habitName ? habit?.habitName : '-'
+    habitFrequency ? habitFrequency : '-'
   );
-  const [data, setData] = useState();
+  const data = [
+    { key: 'Diário', value: 'Diário' },
+    { key: 'Semanal', value: 'Semanal' },
+    { key: 'Mensal', value: 'Mensal' },
+  ];
 
-    useEffect(() => {
-      if (habit?.habitArea === 'Mente') {
-        setData(HabitsData.dataMind)
-      } else if (habit?.habitArea === 'Financeiro') {
-        setData(HabitsData.dataMoney)
-      } else if (habit?.habitArea === 'Corpo') {
-        setData(HabitsData.dataBody)
-      } else if (habit?.habitArea === 'Humor') {
-        setData(HabitsData.dataFun)
-      }
-      habitInput(habit?.habitName ? habit?.habitName : undefined);
-    }, []);
-
+  useEffect(() => {
+    frequencyInput(habitFrequency ? habitFrequency : undefined);
+  }, []);
 
   return (
-    <>
+    <View style={{ marginBottom: 20 }}>
       <SelectList
-        setSelected={setSelected}
         data={data}
         search={false}
+        setSelected={setSelected}
         onSelect={() => {
-          habitInput(selected);
+          alert('selected')
+          frequencyInput(selected);
         }}
         placeholder={selected}
-        inputStyles={styles.inputStyle}
         boxStyles={styles.boxStyle}
+        inputStyles={styles.inputStyle}
         dropdownStyles={styles.dropdownStyle}
         dropdownItemStyles={styles.dropdownItemStyle}
         dropdownTextStyles={styles.dropdownTextStyle}
@@ -45,7 +42,7 @@ export default function SelectHabit({ habit, habitInput }) {
           />
         }
       />
-    </>
+    </View>
   );
 }
 
@@ -66,7 +63,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#8888',
     borderRadius: 10,
-    marginBottom: 10,
+    marginBottom: 15,
   },
   dropdownTextStyle: {
     color: '#888888',
