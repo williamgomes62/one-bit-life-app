@@ -1,8 +1,14 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function CreteHabit({ habitArea, borderColor }) {
+  const navigation = useNavigation();
+
   function handleCreate() {
-    alert('area button');
+    navigation.navigate('HabitPage', {
+      create: true,
+      habit: { habitArea: habitArea },
+    });
   }
 
   return (
